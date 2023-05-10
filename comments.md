@@ -49,3 +49,23 @@ Step 2 "Extention of the app functionality"
 6. Changed name the "handleChange" method to "handleChangeName".
 
 TOTAL: Added a function for adding phone number.
+
+Step 3 "Add search field"
+1. Created a "data" folder in the "src" folder.
+2. Created a contacts.json file in the "data" folder.
+3. Added data in the contacts.json file.
+4. Added an element "filter" to the "state" of "App" component-class.
+5. Added import the contacts.json to the App.jsx.
+6. Added data from contacts.json to the elements in "state" of "App" component-class.
+7. Added search field (<input/> without <form>).
+8. Added "value={this.state.filter}" to <input>.
+9. Destructuring the "state" values in the render() of "App".
+10. Added a "changeFilter" method in the "App" component-class.
+11. Added "onChange={this.changeFilter}" to the <input>.
+12. Added the methods "filter()", "includes()" and "toLowerCase()".
+
+TOTAL:
+1. Added search field.
+2. The search field it's "input" without "fopm".
+3. A value of the search field write to "state" (derived data).
+4. Use the method toLowerCase().

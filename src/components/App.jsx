@@ -1,9 +1,12 @@
 import { Component } from 'react';
 import shortid from 'shortid';
 
+import contacts from '../data/contacts';
+
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: contacts,
+    filter: '',
     name: '',
     number: '',
   };
@@ -43,7 +46,19 @@ export class App extends Component {
     });
   };
 
+  changeFilter = event => {
+    this.setState({
+      filter: event.currentTarget.value
+    });
+  };
+
   render() {
+    const { name, number, filter } = this.state;
+
+    const normalizedFilter = this.state.filter.toLowerCase();
+    const filterContacts = this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter));
+
     return (
       <div
       // style={{
@@ -66,7 +81,7 @@ export class App extends Component {
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
-              value={this.state.name}
+              value={name}
               onChange={this.handleChangeName}
             />
           </label>
@@ -79,7 +94,7 @@ export class App extends Component {
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
-              value={this.state.number}
+              value={number}
               onChange={this.handleChangeNumber}
             />
           </label>
@@ -88,8 +103,15 @@ export class App extends Component {
 
         <div>
           <h3>Contacts</h3>
+          <label>Find contacts by name
+            <input
+              type="text"
+              value={filter}
+              onChange={this.changeFilter}
+            />
+          </label>
           <ul>
-            {this.state.contacts.map(({ id, name, number }) => {
+            {filterContacts.map(({ id, name, number }) => {
               return (
                 <li key={id}>
                   <p>{name}: {number}</p>
