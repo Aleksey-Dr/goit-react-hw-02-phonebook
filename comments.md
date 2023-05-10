@@ -12,24 +12,24 @@ Commons settings
 3. Changed "App" component to component-class.
 4. Added "export class App;" to the App.jsx.
 5. Added "extends Component" for "App" component-class
-6. Add "state" to the "App" component-class.
-7. Add the method render() to the "App" component-class.
+6. Added "state" to the "App" component-class.
+7. Added the method render() to the "App" component-class.
 
 Step 1 "Adding name of a contact and show list contacts"
 1. Added a markup to the render() of "App" component-class.
 2. Added the values to the "state" of the "App" component-class.
 3. Added <label> "Name" to the markup in the render() of the "App" component-class.
 4. Added <button type="submit"> to the markup in the render() of the "App" component-class.
-5. Add "htmlFor={ this.nameInput }" to the <label>.
-6. Add "value={ this.state.name }" to the <input>.
-7. Add a "handleChange" method to the "App" component-class.
-8. Add "import shortid from 'shortid';" to the App.jsx.
-9. Add an "addContact" method to the "App"component-class - create an object with two elements: 1) id: shortid.generate
+5. Added "htmlFor={ this.nameInput }" to the <label>.
+6. Added "value={ this.state.name }" to the <input>.
+7. Added a "handleChange" method to the "App" component-class.
+8. Added "import shortid from 'shortid';" to the App.jsx.
+9. Added an "addContact" method to the "App"component-class - create an object with two elements: 1) id: shortid.generate
    (), 2) name: this.currentTarget.value.
-10. Add a "handleSubmit" method to the "App" component-class.
-11. Add "event.preventDefault();" to the "handleSubmit" method.
-12. Add block "Contacts" to the markup in the render() of the "App" component-class.
-13. Add render <li> items by map() in the block "Contacts".
+10. Added a "handleSubmit" method to the "App" component-class.
+11. Added "event.preventDefault();" to the "handleSubmit" method.
+12. Added block "Contacts" to the markup in the render() of the "App" component-class.
+13. Added render <li> items by map() in the block "Contacts".
 
 TOTAL:
 1. The Phonebook app must consists of a "form" and a "contacts list".
@@ -39,3 +39,13 @@ TOTAL:
 5. The "state" is corresponds template.
 6. Each "contact" is an object with values: "name" and "id".
 7. For generate "id" used "shortid".
+
+Step 2 "Extention of the app functionality"
+1. Added an element "number" to the "state" of "App" component-class.
+2. Added markup in the render() of "App" component-class for <input type="tel">.
+3. Added "htmlFor={this.numberInput}".
+4. Added "value={this.state.number}" to <input>.
+5. Added a "handleChangeNumber" method to the "App" component-class.
+6. Changed name the "handleChange" method to "handleChangeName".
+
+TOTAL: Added a function for adding phone number.
