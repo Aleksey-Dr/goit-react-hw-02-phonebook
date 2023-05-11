@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
+
+import css from './ContactsItem.module.css';
 
 const ContactsItem = ({ filterContacts, onDeleteContact }) => {
   return (
     <>
       {filterContacts.map(({ id, name, number }) => {
         return (
-          <li key={id}>
-            <p>
+          <li className={clsx(css['contacts-item'])} key={id}>
+            <span>
               {name}: {number}
-            </p>
+            </span>
             <button type="button" onClick={() => onDeleteContact(id)}>
               Delete
             </button>

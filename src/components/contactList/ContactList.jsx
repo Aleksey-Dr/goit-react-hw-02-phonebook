@@ -14,6 +14,7 @@ const ContactList = ({ filter, onChange, filterContacts, onDeleteContact }) => {
           onDeleteContact={onDeleteContact}
         />
       </ul>
+
     </div>
   );
 };

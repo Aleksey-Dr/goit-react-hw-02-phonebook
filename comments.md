@@ -138,3 +138,13 @@ PropTypes
 4. Added PropTypes to the "ContactForm" component-class.
 
 TOTAL: Added PropTypes.
+
+Styles
+1. Created a ContactForm.module.css in the "contactForm" folder.
+2. Added classNames to the "ContactForm" component.
+3. Created a Filter.module.css in the "filter" folder.
+4. Added classNames to the "Filter" component.
+5. Created a ContactsItem.module.css in the "contactsItem" folder.
+6. Added classNames to the "ContactsItem" component.
+
+TOTAL: Added basic styles.
