@@ -114,3 +114,11 @@ Step 4 "Refactor app"
 39. Added parameters to the render() "ContactForm" component-class.
 
 TOTAL: Refactor app. Create the components (class): <ContactList>, <Filter>, <ContactForm>, <ContactsItem>.
+
+Step 5 "Deny user double contacts"
+1. Added check for duplicate contact when adding a contact.
+2. Added alert() if contact is duplicate.
+
+TOTAL:
+1. Denied user add a new contact if this contact contented in contacts list.
+2. Showing an alert if a contact is doubled.

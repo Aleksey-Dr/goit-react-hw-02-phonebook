@@ -19,9 +19,15 @@ export class App extends Component {
       number,
     };
 
-    this.setState(({ contacts }) => ({
+    let includesName = false;
+    this.state.contacts.map((contact) => {
+      contact.name === name && (includesName = true);
+      return;
+    });
+
+    includesName ? alert(name + ' is already in contacts') : this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
-    }));
+    })); 
   };
 
   changeFilter = event => {
