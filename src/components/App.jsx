@@ -3,8 +3,8 @@ import shortid from 'shortid';
 
 import contacts from '../data/contacts';
 
-import ContactForm from './contactForm/ContactForm';
-import ContactList from './contactList/ContactList';
+import ContactForm from './contactForm';
+import ContactList from './contactList';
 
 export class App extends Component {
   state = {
@@ -33,7 +33,6 @@ export class App extends Component {
   };
 
   deleteContact = contactId => {
-    console.log("Delete");
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));

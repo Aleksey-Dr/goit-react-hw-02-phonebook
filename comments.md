@@ -130,3 +130,11 @@ Step 6 "Function delete saved contacts"
 4. Added a method "deleteContact" to the "App" component-class.
 
 TOTAL: User can deleting saved contacts.
+
+PropTypes
+1. Added PropTypes to the "ContactsItem" component.
+2. Added PropTypes to the "Filter" component.
+3. Added PropTypes to the "ContactList" component.
+4. Added PropTypes to the "ContactForm" component-class.
+
+TOTAL: Added PropTypes.

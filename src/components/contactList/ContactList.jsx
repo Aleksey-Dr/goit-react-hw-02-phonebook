@@ -1,5 +1,7 @@
-import Filter from '../filter/Filter';
-import ContactsItem from '../contactsItem/ContactsItem';
+import PropTypes from 'prop-types';
+
+import Filter from '../filter';
+import ContactsItem from '../contactsItem';
 
 const ContactList = ({ filter, onChange, filterContacts, onDeleteContact }) => {
   return (
@@ -15,5 +17,12 @@ const ContactList = ({ filter, onChange, filterContacts, onDeleteContact }) => {
     </div>
   );
 };
+
+ContactList.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  filterContacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+}
 
 export default ContactList;
