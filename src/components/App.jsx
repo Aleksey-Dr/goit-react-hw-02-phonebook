@@ -22,7 +22,7 @@ export class App extends Component {
     let includesName = false;
     this.state.contacts.map(contact => {
       contact.name === name && (includesName = true);
-      return;
+      return includesName;
     });
 
     includesName
