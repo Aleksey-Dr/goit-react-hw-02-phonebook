@@ -122,3 +122,11 @@ Step 5 "Deny user double contacts"
 TOTAL:
 1. Denied user add a new contact if this contact contented in contacts list.
 2. Showing an alert if a contact is doubled.
+
+Step 6 "Function delete saved contacts"
+1. Added <button type="button"> to the markup of "ContactsItem" component.
+2. Added a "onClick" property to the <button>.
+3. Added props to the function of render items.
+4. Added a method "deleteContact" to the "App" component-class.
+
+TOTAL: User can deleting saved contacts.

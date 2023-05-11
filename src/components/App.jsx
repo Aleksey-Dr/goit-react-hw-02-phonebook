@@ -20,19 +20,28 @@ export class App extends Component {
     };
 
     let includesName = false;
-    this.state.contacts.map((contact) => {
+    this.state.contacts.map(contact => {
       contact.name === name && (includesName = true);
       return;
     });
 
-    includesName ? alert(name + ' is already in contacts') : this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    })); 
+    includesName
+      ? alert(name + ' is already in contacts')
+      : this.setState(({ contacts }) => ({
+          contacts: [contact, ...contacts],
+        }));
+  };
+
+  deleteContact = contactId => {
+    console.log("Delete");
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
   };
 
   changeFilter = event => {
     this.setState({
-      filter: event.currentTarget.value
+      filter: event.currentTarget.value,
     });
   };
 
@@ -41,7 +50,8 @@ export class App extends Component {
 
     const normalizedFilter = this.state.filter.toLowerCase();
     const filterContacts = this.state.contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter));
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
 
     return (
       <div
@@ -62,9 +72,9 @@ export class App extends Component {
         <ContactList
           filter={filter}
           onChange={this.changeFilter}
+          onDeleteContact={this.deleteContact}
           filterContacts={filterContacts}
         />
-
       </div>
     );
   }
