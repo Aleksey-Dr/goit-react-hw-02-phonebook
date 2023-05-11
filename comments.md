@@ -69,3 +69,48 @@ TOTAL:
 2. The search field it's "input" without "fopm".
 3. A value of the search field write to "state" (derived data).
 4. Use the method toLowerCase().
+
+Step 4 "Refactor app"
+1. Created a "contactForm" folder in the "components" folder.
+2. Created a "contactList" folder in the "components" folder.
+3. Created a "filter" folder in the "components" folder.
+4. Created a "contactsItem" folder in the "components" folder.
+5. Created a ContactForm.jsx file in the "contactForm" folder.
+6. Created a ContactList.jsx file in the "contactList" folder.
+7. Created a Filter.jsx file in the "filter" folder.
+8. Created a ContactsItem.jsx file in the "contactsItem" folder.
+
+11.05.2023
+9. Created a "ContactList" component in the ContactList.jsx.
+10. Added "export default ContactList;" to the ContactList.jsx.
+11. Added a markup to the "ContactList" component.
+12. Added import the "ContactList" component to the "App" component-class.
+13. Changed the part markup in the render() of the "App" component-class to <ContactList> component.
+14. Created a "Filter" component in the Filter.jsx.
+15. Added "export default Filter;" to the Filter.jsx.
+16. Added props to the "Filter".
+17. Added import the "Filter" component to the "ContactList" component.
+18. Changed the part markup in the render() of the "ContactList" component to <Filter> component.
+19. Added props to the "ContactList".
+20. Added parameters to the <ContactList> component in the "App" component-class.
+21. Created a "ContactsItem" component in the ContactsItem.jsx.
+22. Added "export default ContactsItem;" to the ContactsItem.jsx.
+23. Added a markup to the "ContactsItem" component.
+24. Added props to the "ContactsItem".
+25. Added import the "ContactsItem" component to the "ContactList" component.
+26. Changed the part markup in the render() of the "ContactsItem" component to <ContactList> component.
+27. Added parameters to the <ContactsItem> component in the "ContactList" component.
+28. Added "import { Component } from 'react';" to the ContactForm.jsx file.
+29. Created a "ContactForm" component-class in the ContactForm.jsx.
+30. Added "extends Component" for "ContactForm" component-class.
+31. Added "state" to the "ContactForm" component-class.
+32. Added the method render() to the "ContactForm" component-class.
+33. Added a markup to the render() of "ContactForm" component-class.
+34. Added "export default ContactForm;" to the ContactForm.jsx.
+35. Added import the "ContactForm" component-class to the "App" component-class.
+36. Changed the part markup in the render() of the "App" component-class to <ContactForm> component-class.
+37. Moved "state" elements: "name" and "number" of the "App" to the "ContactForm".
+38. Moved methods "handleChangeName", "handleChangeNumber" and "handleSubmit" of the "App" to the "ContactForm".
+39. Added parameters to the render() "ContactForm" component-class.
+
+TOTAL: Refactor app. Create the components (class): <ContactList>, <Filter>, <ContactForm>, <ContactsItem>.
