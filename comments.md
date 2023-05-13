@@ -148,3 +148,11 @@ Styles
 6. Added classNames to the "ContactsItem" component.
 
 TOTAL: Added basic styles.
+
+13.05.2023
+Fixed (phonebook)
+1. Enumeration of the array of elements of the "ContactList" component by the map() method is transferred to the
+   "ContactList" component.
+2. Moved the "Filter" component to the "App" component-class.
+3. Unite the methods of the "ContactForm" component-class: "handleChangeName" and "handleChangeNumber" to one method.
+4. Change PropTypes.

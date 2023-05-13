@@ -10,15 +10,10 @@ class ContactForm extends Component {
     number: '',
   };
 
-  handleChangeName = event => {
+  handleChange = event => {
+    const { name, value } = event.currentTarget
     this.setState({
-      name: event.currentTarget.value,
-    });
-  };
-
-  handleChangeNumber = event => {
-    this.setState({
-      number: event.currentTarget.value,
+      [name]: value,
     });
   };
 
@@ -27,6 +22,9 @@ class ContactForm extends Component {
 
     const { name, number } = this.state;
     this.props.onSubmit(name, number);
+
+    console.log(this.props.onSubmit);
+
     this.setState({
       name: '',
       number: '',
@@ -34,7 +32,8 @@ class ContactForm extends Component {
   };
 
     render() {
-        const { name, number, } = this.state;
+      const { name, number, } = this.state;
+      const handleChange = this.handleChange;
 
     return (
       <form className={clsx(css.form)} onSubmit={this.handleSubmit}>
@@ -48,7 +47,7 @@ class ContactForm extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             value={name}
-            onChange={this.handleChangeName}
+            onChange={handleChange}
           />
         </label>
 
@@ -62,14 +61,14 @@ class ContactForm extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
-            onChange={this.handleChangeNumber}
+            onChange={handleChange}
           />
         </label>
         <button type="submit">Add contact</button>
       </form>
     );
-  }
-}
+  };
+};
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,

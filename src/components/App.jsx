@@ -4,6 +4,7 @@ import shortid from 'shortid';
 import contacts from '../data/contacts';
 
 import ContactForm from './contactForm';
+import Filter from './filter';
 import ContactList from './contactList';
 
 export class App extends Component {
@@ -29,7 +30,7 @@ export class App extends Component {
       ? alert(name + ' is already in contacts')
       : this.setState(({ contacts }) => ({
           contacts: [contact, ...contacts],
-        }));
+      }));
   };
 
   deleteContact = contactId => {
@@ -55,12 +56,6 @@ export class App extends Component {
     return (
       <div
       style={{
-        // height: '100vh',
-        // display: 'flex',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // fontSize: 40,
-        // color: '#010101'
           boxSizing: 'border-box',
           width: '420px',
           margin: '20px'
@@ -71,9 +66,9 @@ export class App extends Component {
         <ContactForm onSubmit={this.addContact} />
 
         <h3>Contacts</h3>
+        <Filter value={filter} onChange={this.changeFilter} />
+
         <ContactList
-          filter={filter}
-          onChange={this.changeFilter}
           onDeleteContact={this.deleteContact}
           filterContacts={filterContacts}
         />
